@@ -1,0 +1,585 @@
+<div class="container">
+  <h2>Submit New Application</h2>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div class="personal">
+      <h3>Personal Information</h3>
+      <label for="firstName">First Name*</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        placeholder="First Name"
+        formControlName="firstName"
+      />
+      <div
+        *ngIf="
+          formData.get('firstName')?.invalid &&
+          formData.get('firstName')?.touched
+        "
+      >
+        <small *ngIf="formData.get('firstName')?.errors?.['required']"
+          >First Name is required.</small
+        >
+        <small *ngIf="formData.get('firstName')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="middleName">Middle Name</label>
+      <input
+        type="text"
+        id="middleName"
+        name="middleName"
+        placeholder="Middle Name"
+        formControlName="middleName"
+      />
+      <div
+        *ngIf="
+          formData.get('middleName')?.invalid &&
+          formData.get('middleName')?.touched
+        "
+      >
+        <small *ngIf="formData.get('middleName')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="lastName">Last Name*</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        placeholder="Last Name"
+        formControlName="lastName"
+      />
+      <div
+        *ngIf="
+          formData.get('lastName')?.invalid && formData.get('lastName')?.touched
+        "
+      >
+        <small *ngIf="formData.get('lastName')?.errors?.['required']"
+          >Last Name is required.</small
+        >
+        <small *ngIf="formData.get('lastName')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="dateOfBirth">Date of Birth*</label>
+      <input
+        type="date"
+        id="dateOfBirth"
+        name="dateOfBirth"
+        formControlName="dateOfBirth"
+      />
+      <div
+        *ngIf="
+          formData.get('dateOfBirth')?.invalid &&
+          formData.get('dateOfBirth')?.touched
+        "
+      >
+        <small *ngIf="formData.get('dateOfBirth')?.errors?.['required']"
+          >Date of Birth is required.</small
+        >
+      </div>
+
+      <label for="maritalStatus">Marital Status*</label>
+      <select
+        id="maritalStatus"
+        name="maritalStatus"
+        formControlName="maritalStatus"
+      >
+        <option value="none" disabled selected>Select your option</option>
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+        <option value="divorced">Divorced</option>
+        <option value="separated">Separated</option>
+        <option value="widowed">Widowed</option>
+      </select>
+      <div
+        *ngIf="
+          formData.get('maritalStatus')?.invalid &&
+          formData.get('maritalStatus')?.touched
+        "
+      >
+        <small *ngIf="formData.get('maritalStatus')?.errors?.['required']"
+          >Marital Status is required.</small
+        >
+        <small *ngIf="formData.get('maritalStatus')?.errors?.['pattern']"
+          >Invalid Marital Status.</small
+        >
+      </div>
+
+      <label for="ssnNumber">SSN Number*</label>
+      <input
+        type="text"
+        name="ssnNumber"
+        formControlName="ssnNumber"
+        placeholder="SSN Number"
+      />
+      <div
+        *ngIf="
+          formData.get('ssnNumber')?.invalid &&
+          formData.get('ssnNumber')?.touched
+        "
+      >
+        <small *ngIf="formData.get('ssnNumber')?.errors?.['required']"
+          >SSN Number is required.</small
+        >
+      </div>
+
+      <label for="loanAmount">Loan Amount*</label>
+      <input
+        type="text"
+        name="loanAmount"
+        formControlName="loanAmount"
+        placeholder="Loan Amount"
+      />
+      <div
+        *ngIf="
+          formData.get('loanAmount')?.invalid &&
+          formData.get('loanAmount')?.touched
+        "
+      >
+        <small *ngIf="formData.get('loanAmount')?.errors?.['required']"
+          >Loan Amount is required.</small
+        >
+        <small *ngIf="formData.get('loanAmount')?.errors?.['pattern']"
+          >Must be numeric.</small
+        >
+      </div>
+
+      <label for="loanPurpose">Loan Purpose*</label>
+      <select name="loanPurpose" formControlName="loanPurpose">
+        <option value="none" disabled selected>Select your option</option>
+        <option value="debt">Debt</option>
+        <option value="education">Education Loan</option>
+        <option value="home">Home Loan</option>
+        <option value="personal">Personal Loan</option>
+      </select>
+      <div
+        *ngIf="
+          formData.get('loanPurpose')?.invalid &&
+          formData.get('loanPurpose')?.touched
+        "
+      >
+        <small *ngIf="formData.get('loanPurpose')?.errors?.['required']"
+          >Loan Purpose is required.</small
+        >
+        <small *ngIf="formData.get('loanPurpose')?.errors?.['pattern']"
+          >Invalid Loan Purpose.</small
+        >
+      </div>
+
+      <label for="description">Description</label>
+      <textarea
+        name="description"
+        id="description"
+        formControlName="description"
+        placeholder="Describe the reason why you are applying for the loan"
+      ></textarea>
+    </div>
+
+    <!-- Address Section -->
+
+    <div class="address">
+      <h3>Address</h3>
+      <label for="addressLine1">Address Line 1*</label>
+      <input
+        type="text"
+        name="addressLine1"
+        id="addressLine1"
+        formControlName="addressLine1"
+        placeholder="Address Line 1"
+      />
+      <div
+        *ngIf="
+          formData.get('addressLine1')?.invalid &&
+          formData.get('addressLine1')?.touched
+        "
+      >
+        <small *ngIf="formData.get('addressLine1')?.errors?.['required']"
+          >Address Line 1 is required.</small
+        >
+        <small *ngIf="formData.get('addressLine1')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="addressLine2">Address Line 2</label>
+      <input
+        type="text"
+        name="addressLine2"
+        id="addressLine2"
+        formControlName="addressLine2"
+        placeholder="Address Line 2"
+      />
+      <div
+        *ngIf="
+          formData.get('addressLine2')?.invalid &&
+          formData.get('addressLine2')?.touched
+        "
+      >
+        <small *ngIf="formData.get('addressLine2')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="state">State*</label>
+      <input
+        type="text"
+        name="state"
+        id="state"
+        formControlName="state"
+        placeholder="State"
+      />
+      <div
+        *ngIf="formData.get('state')?.invalid && formData.get('state')?.touched"
+      >
+        <small *ngIf="formData.get('state')?.errors?.['required']"
+          >State is required.</small
+        >
+        <small *ngIf="formData.get('state')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="city">City*</label>
+      <input
+        type="text"
+        name="city"
+        id="city"
+        formControlName="city"
+        placeholder="City"
+      />
+      <div
+        *ngIf="formData.get('city')?.invalid && formData.get('city')?.touched"
+      >
+        <small *ngIf="formData.get('city')?.errors?.['required']"
+          >City is required.</small
+        >
+        <small *ngIf="formData.get('city')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="postalCode">Postal Code*</label>
+      <input
+        type="number"
+        name="postalCode"
+        id="postalCode"
+        formControlName="postalCode"
+        placeholder="Enter 5 digit Pin Code"
+      />
+      <div
+        *ngIf="
+          formData.get('postalCode')?.invalid &&
+          formData.get('postalCode')?.touched
+        "
+      >
+        <small *ngIf="formData.get('postalCode')?.errors?.['required']"
+          >Postal Code is required.</small
+        >
+        <small *ngIf="formData.get('postalCode')?.errors?.['pattern']"
+          >Must be exactly 5 numerical digits.</small
+        >
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact">
+      <h3>Contact Information</h3>
+
+      <label for="homePhone">Home Phone*</label>
+      <input
+        type="text"
+        id="homePhone"
+        name="homePhone"
+        formControlName="homePhone"
+        placeholder="Enter your Home Phone"
+      />
+      <div
+        *ngIf="
+          formData.get('homePhone')?.invalid &&
+          formData.get('homePhone')?.touched
+        "
+      >
+        <small *ngIf="formData.get('homePhone')?.errors?.['required']"
+          >Home Phone is required.</small
+        >
+        <small *ngIf="formData.get('homePhone')?.errors?.['pattern']"
+          >Must be exactly 10 digits.</small
+        >
+      </div>
+
+      <label for="officePhone">Office Phone</label>
+      <input
+        type="text"
+        id="officePhone"
+        name="officePhone"
+        formControlName="officePhone"
+        placeholder="Enter your Office Phone"
+      />
+      <div
+        *ngIf="
+          formData.get('officePhone')?.invalid &&
+          formData.get('officePhone')?.touched
+        "
+      >
+        <small *ngIf="formData.get('officePhone')?.errors?.['pattern']"
+          >Must be exactly 10 digits.</small
+        >
+      </div>
+
+      <label for="mobile">Mobile*</label>
+      <input
+        type="text"
+        id="mobile"
+        name="mobile"
+        formControlName="mobile"
+        placeholder="Enter a 10 digit number"
+      />
+      <div
+        *ngIf="
+          formData.get('mobile')?.invalid && formData.get('mobile')?.touched
+        "
+      >
+        <small *ngIf="formData.get('mobile')?.errors?.['required']"
+          >Mobile Number is required.</small
+        >
+        <small *ngIf="formData.get('mobile')?.errors?.['pattern']"
+          >Must be exactly 10 digits.</small
+        >
+      </div>
+
+      <label for="email">Email Address*</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        formControlName="email"
+        placeholder="Enter your Email Address"
+      />
+      <div
+        *ngIf="
+          formData.get('email')?.invalid &&
+          (formData.get('email')?.dirty || formData.get('email')?.touched)
+        "
+      >
+        <div *ngIf="formData.get('email')?.errors?.['required']">
+          <small>Email is required.</small>
+        </div>
+        <div *ngIf="formData.get('email')?.errors?.['email']">
+          <small>Email must be a valid email address.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Employment Details -->
+
+    <div class="employement">
+      <h3>Employment Details</h3>
+
+      <label for="employerName">Employer Name*</label>
+      <input
+        type="text"
+        name="employerName"
+        id="employerName"
+        formControlName="employerName"
+        placeholder="Name"
+      />
+      <div
+        *ngIf="
+          formData.get('employerName')?.invalid &&
+          formData.get('employerName')?.touched
+        "
+      >
+        <small *ngIf="formData.get('employerName')?.errors?.['required']"
+          >Employer Name is required.</small
+        >
+        <small *ngIf="formData.get('employerName')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="annualSalary">Annual Salary*</label>
+      <input
+        type="text"
+        name="annualSalary"
+        id="annualSalary"
+        formControlName="annualSalary"
+        placeholder="Annual Salary"
+      />
+      <div
+        *ngIf="
+          formData.get('annualSalary')?.invalid &&
+          formData.get('annualSalary')?.touched
+        "
+      >
+        <small *ngIf="formData.get('annualSalary')?.errors?.['required']"
+          >Annual Salary is required.</small
+        >
+        <small *ngIf="formData.get('annualSalary')?.errors?.['pattern']"
+          >Must be a number.</small
+        >
+      </div>
+
+      <label for="workExperience">Work Experience*</label>
+      <div class="inline-inputs">
+        <input
+          type="number"
+          name="workExperienceYears"
+          id="workExperienceYears"
+          formControlName="workExperienceYears"
+          placeholder="Year"
+        />
+
+        <input
+          type="number"
+          name="workExperienceMonths"
+          id="workExperienceMonths"
+          formControlName="workExperienceMonths"
+          placeholder="Month"
+        />
+      </div>
+      <div
+        *ngIf="
+          formData.get('workExperienceYears')?.invalid &&
+          formData.get('workExperienceYears')?.touched
+        "
+      >
+        <small *ngIf="formData.get('workExperienceYears')?.errors?.['required']"
+          >Year of Experience is required.</small
+        >
+        <small *ngIf="formData.get('workExperienceYears')?.errors?.['pattern']"
+          >Must be a valid 2 digit numeric value.</small
+        >
+      </div>
+      <div
+        *ngIf="
+          formData.get('workExperienceMonths')?.invalid &&
+          formData.get('workExperienceMonths')?.touched
+        "
+      >
+        <small
+          *ngIf="formData.get('workExperienceMonths')?.errors?.['required']"
+          >Month of Experience is required.</small
+        >
+        <small *ngIf="formData.get('workExperienceMonths')?.errors?.['pattern']"
+          >Must be a valid positive number within range 0-12.</small
+        >
+      </div>
+
+      <label for="designation">Designation</label>
+      <input
+        type="text"
+        name="designation"
+        id="designation"
+        formControlName="designation"
+        placeholder="Designation"
+      />
+      <div
+        *ngIf="
+          formData.get('designation')?.invalid &&
+          formData.get('designation')?.touched
+        "
+      >
+        <small *ngIf="formData.get('designation')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="employerAddress">Employer - Address*</label>
+      <input
+        type="text"
+        name="employerAddress"
+        id="employerAddress"
+        formControlName="employerAddress"
+        placeholder="Address of Employer"
+      />
+      <div
+        *ngIf="
+          formData.get('employerAddress')?.invalid &&
+          formData.get('employerAddress')?.touched
+        "
+      >
+        <small *ngIf="formData.get('employerAddress')?.errors?.['required']"
+          >Address of Employer is required.</small
+        >
+        <small *ngIf="formData.get('employerAddress')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="employerCity">Employer - City*</label>
+      <input
+        type="text"
+        name="employerCity"
+        id="employerCity"
+        formControlName="employerCity"
+        placeholder="City"
+      />
+      <div
+        *ngIf="
+          formData.get('employerCity')?.invalid &&
+          formData.get('employerCity')?.touched
+        "
+      >
+        <small *ngIf="formData.get('employerCity')?.errors?.['required']"
+          >Employer City is required.</small
+        >
+        <small *ngIf="formData.get('employerCity')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+      
+      <label for="employerState">Employer - State*</label>
+      <input
+        type="text"
+        name="employerState"
+        id="employerState"
+        formControlName="employerState"
+        placeholder="State"
+      />
+      <div
+        *ngIf="
+          formData.get('employerState')?.invalid &&
+          formData.get('employerState')?.touched
+        "
+      >
+        <small *ngIf="formData.get('employerState')?.errors?.['required']"
+          >Employer State is required.</small
+        >
+        <small *ngIf="formData.get('employerState')?.errors?.['maxLength']"
+          >Maximum length is 255.</small
+        >
+      </div>
+
+      <label for="employerPostalCode">Employer - Postal Code*</label>
+      <input
+        type="text"
+        name="employerPostalCode"
+        id="employerPostalCode"
+        formControlName="employerPostalCode"
+        placeholder="Enter 5 digit Pin Code"
+      />
+      <div
+        *ngIf="
+          formData.get('employerPostalCode')?.invalid &&
+          formData.get('employerPostalCode')?.touched
+        "
+      >
+        <small *ngIf="formData.get('employerPostalCode')?.errors?.['required']"
+          >Employer Postal Code is required.</small
+        >
+        <small *ngIf="formData.get('employerPostalCode')?.errors?.['pattern']"
+          >Must be exactly 5 digits.</small
+        >
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="submit" type="submit">Submit</button>
+      <button type="back-button" (click)="onBack()">Back</button>
+    </div>
+  </form>
+</div>

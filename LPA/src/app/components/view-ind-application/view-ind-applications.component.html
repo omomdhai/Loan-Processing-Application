@@ -1,0 +1,152 @@
+<div class="container">
+  <h2>View Application</h2>
+  <div>
+    <p><strong>Application ID:</strong> {{userId}}</p>
+    <p><strong>Application Status:</strong> {{applicationStatus}}</p>
+    <p><strong>Score:</strong> {{score}}</p>
+    <p><strong>Decline Reason:</strong> {{declineReason}}</p>
+  </div>
+  <hr>
+  <form [formGroup]="formData">
+    <fieldset>
+      <legend>Original Application</legend>
+      <legend>Personal Information</legend>
+      <fieldset class="personal">
+        <div class="form-group">
+          <label>First Name</label>
+          <input formControlName="firstName" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Middle Name</label>
+          <input formControlName="middleName" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input formControlName="lastName" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input formControlName="dateOfBirth" class="form-control" placeholder="NA" type="date" />
+        </div>
+        <div class="form-group">
+          <label>Marital Status</label>
+          <select formControlName="maritalStatus" class="form-control">
+            <option value="">Options</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+            <option value="separated">Separated</option>
+            <option value="widowed">Widowed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>SSN Number</label>
+          <input formControlName="ssnNumber" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Loan Amount</label>
+          <input formControlName="loanAmount" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Loan Purpose</label>
+          <select formControlName="loanPurpose" class="form-control">
+            <option value="none" disabled selected>Select your option</option>
+            <option value="debt">Debt</option>
+            <option value="education">Education Loan</option>
+            <option value="home">Home Loan</option>
+            <option value="personal">Personal Loan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea formControlName="description" class="form-control" placeholder="NA"></textarea>
+        </div>
+      </fieldset>
+      <div class="address-contact-container">
+        <fieldset class="address">
+          <legend>Address Information</legend>
+          <div class="form-group">
+            <label>Address Line 1</label>
+            <input formControlName="addressLine1" class="form-control" placeholder="NA" />
+          </div>
+          <div class="form-group">
+            <label>Address Line 2</label>
+            <input formControlName="addressLine2" class="form-control" placeholder="NA" />
+          </div>
+          <div class="form-group">
+            <label>City</label>
+            <input formControlName="city" class="form-control" placeholder="NA" />
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <input formControlName="state" class="form-control" placeholder="NA" />
+          </div>
+          <div class="form-group">
+            <label>Postal Code</label>
+            <input formControlName="postalCode" class="form-control" placeholder="NA" />
+          </div>
+        </fieldset>
+        <fieldset class="contact">
+          <legend>Contact Information</legend>
+          <div class="form-group">
+            <label>Home Phone</label>
+            <input formControlName="homePhone" class="form-control" placeholder="NA" />
+          </div>
+          <div class="form-group">
+            <label>Office Phone</label>
+            <input formControlName="officePhone" class="form-control" placeholder="NA" />
+          </div>
+          <div class="form-group">
+            <label>Mobile</label>
+            <input formControlName="mobile" class="form-control" placeholder="NA" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input formControlName="email" class="form-control" placeholder="NA" />
+          </div>
+        </fieldset>
+      </div>
+      <fieldset class="employment">
+        <legend>Employment Details</legend>
+        <div class="form-group">
+          <label>Employer Name</label>
+          <input formControlName="employerName" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Annual Salary</label>
+          <input formControlName="annualSalary" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Work Experience</label>
+          <div>
+            <input formControlName="workExperienceYears" class="form-control" placeholder="NA" type="number" />
+            <input formControlName="workExperienceMonths" class="form-control" placeholder="NA" type="number" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Designation</label>
+          <input formControlName="designation" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Employer Address</label>
+          <input formControlName="employerAddress" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Employer City</label>
+          <input formControlName="employerCity" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Employer State</label>
+          <input formControlName="employerState" class="form-control" placeholder="NA" />
+        </div>
+        <div class="form-group">
+          <label>Employer Postal Code</label>
+          <input formControlName="employerPostalCode" class="form-control" placeholder="NA" />
+        </div>
+      </fieldset>
+      <div class="back-button">
+        <button type="button" (click)="onBack()">Back</button>
+      </div>
+    </fieldset>
+  </form>
+</div>

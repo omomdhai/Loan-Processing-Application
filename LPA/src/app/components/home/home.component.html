@@ -1,0 +1,42 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC Bank Loan Processing Application</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="home.component.scss" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>ABC BANK</h1>
+      <p>Loan Processing Application</p>
+    </div>
+    <hr />
+    <div class="content">
+      <h2>Welcome to ABC Bank Loan Processing System</h2>
+      <p>Now Get your Loan Approved instantly!!!</p>
+      <p>
+        Your loan is approved immediately using this cool and fully automated
+        application.
+      </p>
+      <p>
+        To submit a new loan request, click on "Submit an application".
+      </p>
+      <p>
+        To view existing loan applications, click on "View applications".
+      </p>
+    </div>
+    <div class="buttons">
+      <button routerLink="/apply-loan">
+        <i class="fas fa-file-alt"></i> Submit an Application
+      </button>
+      <button routerLink="/view-applied-applications">
+        <i class="fas fa-eye"></i> View Applications
+      </button>
+    </div>
+  </div>
+</body>

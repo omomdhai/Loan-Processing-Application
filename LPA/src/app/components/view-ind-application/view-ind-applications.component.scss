@@ -1,0 +1,157 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  background-color: #e9f5e9;
+}
+
+form {
+  margin-left: 9%;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  background-color: #e9f5e9;
+  padding-top: 0.5 em;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #006400; /* Dark green color */
+}
+
+p {
+  padding-left: 11em;
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  font-weight: bold;
+  color: #006400; /* Dark green color */
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: #f9f9f9;
+  
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 0.5em;
+}
+
+.section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5em;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+select
+{
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+input{
+  width: 99%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 99%;
+  padding: 0.5em;
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+.back-button {
+  margin-top: 1em;
+}
+
+.back-button button {
+  background-color: rgb(209, 0, 0);
+  color: #fff;
+  border: none;
+}
+
+.back-button button:hover {
+  background-color: #a00101;
+}
+
+.personal {
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0.1em solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.address-contact-container {
+  
+  display: flex;
+  gap: 1em; /* Space between address and contact sections */
+}
+
+.address, .contact {
+  border-radius: 1px;
+  flex: 1; /* Allow sections to grow and fill the space */
+  border: 0.1em solid #ccc;
+  padding: 1em;
+  border-radius: 0.8em;
+}
+
+@media screen and (max-width: 48em) {
+  .address-contact-container {
+    border-radius: 1px;
+    flex-direction: column;
+  }
+
+  .address, .contact {
+    border-radius: 1px;
+    width: 100%;
+    margin-bottom: 1em; /* Space between address and contact in mobile view */
+  }
+}
+
+.employment {
+  border-radius: 5px;
+  border: 0.1em solid #ccc;
+  padding: 1em;
+}

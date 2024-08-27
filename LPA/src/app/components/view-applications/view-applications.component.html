@@ -1,0 +1,30 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+<div class="container">
+  <h1>View Applications</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Application ID</th>
+        <th>Applicant Name</th>
+        <th>Submitted Date</th>
+        <th>Status</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of applications">
+        <td> {{ user.id }} </td>
+        <td>{{ user.applicantName }}</td>
+        <td>{{ user.submittedDate }}</td>
+        <td *ngIf="user.applicationStatus != null; else nonNullOption">
+          {{ user.applicationStatus }}
+        </td>
+        <ng-template #nonNullOption>
+          <td>In Progress</td>
+        </ng-template>
+        <td><button class="view-button" (click)="navigateToApplication(user.id)">View Details</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="back-button" (click)="goBack()">Back</button>
+</div>

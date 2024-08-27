@@ -21,3 +21,6 @@ The project involves creating a web-based application for submitting new loan ap
 - Add bureeauData at LPA\Database\Query to add Bureaudata.
 - Add Modelling Data at LPA\Model\Modeling dataset.csv.
 - Run LPA\Model\Final Model.ipynb to get score. 
+
+### Contact:
+- For any inquiries or support, please contact omdariyans@gmail.com

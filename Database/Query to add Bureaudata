@@ -1,5 +1,5 @@
-I have removed the data because of policy!
-You can add you data like below format!
+I have removed the data because of policy!!!
+You can add you data like below format!!!
 
 use applicationform;
 INSERT INTO bureau_data (id, delinq_2yrs, inq_last_6mths, mths_since_last_delinq, mths_since_last_record, open_acc, pub_rec, revol_bal, revol_util, total_acc, earliest_cr_line) VALUES ('data:integer', 'data:integer', 'data:integer', 'data:integer', 'data:integer', 'data:integer', 'data:integer', 'data:integer', 'data:integer', 'data:integer', 'data-string= mm/dd/yyyy hh:mm');

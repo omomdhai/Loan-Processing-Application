@@ -1,6 +1,3 @@
-I have removed the data because of policy!!!
-You can add you data like below format!!!
-
 id,loan_amnt,emp_length,annual_inc,delinq_2yrs,inq_last_6mths,mths_since_last_delinq,mths_since_last_record,open_acc,pub_rec,revol_bal,revol_util,total_acc,earliest_cr_line,purpose,desc,loan_status
 I have removed the data because of policy!,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
